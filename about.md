@@ -9,6 +9,8 @@ I am a first year PhD student at the Bioinformatics and Computational Biology [(
 
 I am currently doing my first year rotations. My current rotation is with Professor [Jeffrey Trimarchi](http://www.gdcb.iastate.edu/faculty-and-research/faculty/jeffrey-m-trimarchi/). I have also done rotations with Professor [Guang Song](http://www.cs.iastate.edu/~gsong) and Professor [Dianne Cook](http://dicook.github.io/). 
 
+I completed my undergrad in Computer Science from [Islamic University of Technology(IUT)](http://www.iutoic-dhaka.edu/), Bangladesh with an [OIC](http://www.oic-oci.org/oicv2/home/?lan=en) scholarship. Then I worked one and a half years as a software engineer at [Samsung R&D Institute, Bangladesh](http://en.wikipedia.org/wiki/SRBD).
+
 I love travelling and the picture you are seeing in this post is on the hill tracks at [Bandarban](http://en.wikipedia.org/wiki/Bandarban_District), [Bangladesh](http://en.wikipedia.org/wiki/Bangladesh).
 
 You can contact me at nafizh[at]iastate[dot]edu
