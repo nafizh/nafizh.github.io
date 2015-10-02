@@ -20,7 +20,7 @@ avatar: /images/me_2.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble: 
-  email: 
+  email: nafizh@iastate.edu
   facebook: 
   flickr: 
   github: nafizh
@@ -28,7 +28,7 @@ footer-links:
   linkedin: 
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
+  twitter: naf1zh
   stackoverflow: users/4438782/nafizh # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
