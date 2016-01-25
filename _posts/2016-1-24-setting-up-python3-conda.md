@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: page
 title: Setting up Ipython notebook with python3 through Conda
+comments: true
 ---
 
 Recently, I have been studying the book [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130/ref=sr_1_2?ie=UTF8&qid=1437754343&sr=8-2&keywords=python+machine+learning+essentials) by [Sebastian Raschka](http://sebastianraschka.com/). The book uses python 3 rather than python 2. My Mac OS had been setup with python 2 with [Anaconda](https://www.continuum.io/downloads) by Continuum Analytics. Anaconda is a python distribution that includes all essential packages needed for data science so that you do not need to worry about installing them yourself.

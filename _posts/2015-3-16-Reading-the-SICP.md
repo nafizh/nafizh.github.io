@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: page
 title: Reading the SICP
+comments: true
 ---
 
 I have waited long enough. Finally, I came to realise, its time I should read the [SICP](http://mitpress.mit.edu/sicp/) (Structure and Interpretation of Computer Programs), widely regarded as the best CS book ever written. It feels kind of embarrassing that I have not yet read the book while I have an undergrad education in CS. 

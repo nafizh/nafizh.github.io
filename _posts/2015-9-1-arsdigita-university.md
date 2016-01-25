@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: page
 title: ArsDigita University
+comments: true
 ---
 
 So I started going through [SICP](http://mitpress.mit.edu/sicp/) but boy, it is a tough read. I had to read every sentence at least twice, sometimes more to truly get it. Then I found a great [course](http://aduni.org/courses/sicp/) that goes through the SICP book and is also named after SICP. Apparently, the ArsDigita University was an experiment for tuition free education by MIT professor [Philip Greenspun](http://philip.greenspun.com/) who famously [refunded](http://www.mensetmanus.net/inspiration/tuition-free-mit/) his students' tuition. You can read more about it [here](http://aduni.org/about/).
