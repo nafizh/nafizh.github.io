@@ -7,7 +7,7 @@ permalink: /about/
 
 ![alt text]({{ site.baseurl }}/images/tindu.jpg)
 
-I am a PhD student at the Bioinformatics and Computational Biology [(BCB)](http://bcb.iastate.edu/) program in [Iowa State University](http://www.iastate.edu/). The "Md" in my first name implies "Muhammad" (Though everybody calls me Nafiz, which is also a part of my first name). Back at my home in Bangladesh, it was (I guess it is not anymore) a kind of weird custom to make it short into "Md". Many people gets confused what that means, so, here is the clarification.
+I am a PhD student at the Bioinformatics and Computational Biology [(BCB)](http://bcb.iastate.edu/) program in [Iowa State University](http://www.iastate.edu/). The "Md" in my first name implies "Muhammad" (Though everybody calls me Nafiz, which is also a part of my first name). Back at my home in Bangladesh, it was (I guess it is not anymore) a kind of weird custom to make it short into "Md". Many people get confused what that means, so, here is the clarification.
 
 I work in the [Friedberg](http://iddo-friedberg.net/) Lab. My current research involves finding new bacteriocins through context genes - genes that are proximal to bacteriocins, and have shown to be largely conserved across species. I also did my first year rotations with [Guang Song](http://www.cs.iastate.edu/~gsong), [Dianne Cook](http://dicook.github.io/) and [Jeffrey Trimarchi](http://www.gdcb.iastate.edu/faculty-and-research/faculty/jeffrey-m-trimarchi/).
 
