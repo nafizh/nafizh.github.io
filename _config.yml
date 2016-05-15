@@ -4,6 +4,7 @@
 
 permalink:           pretty
 
+gems: [jekyll-paginate]
 
 # Setup
 title:               Md Nafiz Hamid
@@ -31,7 +32,6 @@ github:
   repo:              https://github.com/nafizh/nafizh.github.io
 
 
-pages_list:       
+pages_list:
   About: '/about'
   Archive: '/archive'
-
