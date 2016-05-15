@@ -35,3 +35,6 @@ github:
 pages_list:
   About: '/about'
   Archive: '/archive'
+
+# Google services
+google_analytics: UA-72747784-1
