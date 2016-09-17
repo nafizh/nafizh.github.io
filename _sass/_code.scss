@@ -5,15 +5,20 @@
 
 code,
 pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  //font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: "Inconsolata";
+  overflow: auto; // my code - solved the scroll bar problem when text overflowed
 }
 
 code {
   padding: .25em .5em;
-  font-size: 85%;
+  font-size: 85%; //default
+  //font-size: 100%;
   color: #bf616a;
   background-color: #f9f9f9;
-  border-radius: 3px;
+  border-radius: 3px; //default
+  //border-radius: 5px;
+  //overflow: scroll;
 }
 
 pre {
@@ -26,20 +31,24 @@ pre code {
   font-size: 100%;
   color: inherit;
   background-color: transparent;
+  //overflow: scroll;
 }
 
 // Pygments via Jekyll
 .highlight {
   padding: 1rem;
   margin-bottom: 1rem;
-  font-size: .8rem;
+  //font-size: .8rem; //default
+  font-size: .9rem;
   line-height: 1.4;
   background-color: #f9f9f9;
-  border-radius: .25rem;
+  border-radius: .25rem; //default
+  //border-radius: .10rem;
 
   pre {
     margin-bottom: 0;
-    overflow-x: auto;
+    overflow-x: auto; //default
+    //overflow: scroll;
   }
 
   .lineno {

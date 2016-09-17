@@ -15,8 +15,10 @@ body {
 }
 
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; //default
+  //font-family: "Inconsolata";
+  font-size: 16px; //default
+  //font-size: 25px;
   line-height: 1.5;
 
   @media (min-width: 38em) {

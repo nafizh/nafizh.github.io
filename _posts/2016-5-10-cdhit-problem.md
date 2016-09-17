@@ -31,22 +31,21 @@ while( i < des.size and ( des.data[i] != '\n') ) i += 1;
 
 Now, with the `-d` flag you can put the number as you wish and in the `.clstr` file you should get the fasta sequence identifiers up to that number. Here is a portion my `.clstr` file with the `-d 300` flag -
 
-```
->Cluster 0
-0       702aa, >32.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJQ31854.1 | CLSP01000002:19049-21157 | immunity... *
-1       702aa, >34.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJV34097.1 | CMAH01000025:21097-23205 | immunity... at 99.57%
-2       702aa, >27.2 | product: bacteriocin immunity protein | note: no note | protein_id: COH18396.1 | CRGD01000006:80660-82768 | immunity... at 99.43%
-3       702aa, >27.2 | product: bacteriocin immunity protein | note: no note | protein_id: COI25170.1 | CRIA01000001:244000-246108 | immunity... at 99.86%
-4       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COH18396.1 | CRGD01000006:80660-82768 | immunity... at 99.43%
-5       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJN26788.1 | CLNU01000003:29923-32031 | immunity... at 99.72%
-6       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COI25170.1 | CRIA01000001:244000-246108 | immunity... at 99.86%
-7       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COJ04657.1 | CRJL01000001:149015-151123 | immunity... at 99.72%
-8       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COM73718.1 | CROP01000007:61006-63114 | immunity... at 99.72%
-9       702aa, >39.2 | product: bacteriocin immunity protein | note: no note | protein_id: COA67976.1 | CHPO01000002:36267-38375 | immunity... at 97.58%
-10      702aa, >36.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJQ31854.1 | CLSP01000002:19049-21157 | immunity... at 100.00%
-11      702aa, >35.2 | product: bacteriocin immunity protein | note: no note | protein_id: CIS40931.1 | CHNO01000004:74173-76281 | immunity... at 99.72%
-12      702aa, >30.2 | product: bacteriocin immunity protein | note: no note | protein_id: CIS40931.1 | CHNO01000004:74173-76281 | immunity... at 99.72%
-13      702aa, >30.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJV34097.1 | CMAH01000025:21097-23205 | immunity... at 99.57%
-```
+    >Cluster 0
+    0       702aa, >32.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJQ31854.1 | CLSP01000002:19049-21157 | immunity... *
+    1       702aa, >34.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJV34097.1 | CMAH01000025:21097-23205 | immunity... at 99.57%
+    2       702aa, >27.2 | product: bacteriocin immunity protein | note: no note | protein_id: COH18396.1 | CRGD01000006:80660-82768 | immunity... at 99.43%
+    3       702aa, >27.2 | product: bacteriocin immunity protein | note: no note | protein_id: COI25170.1 | CRIA01000001:244000-246108 | immunity... at 99.86%
+    4       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COH18396.1 | CRGD01000006:80660-82768 | immunity... at 99.43%
+    5       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJN26788.1 | CLNU01000003:29923-32031 | immunity... at 99.72%
+    6       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COI25170.1 | CRIA01000001:244000-246108 | immunity... at 99.86%
+    7       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COJ04657.1 | CRJL01000001:149015-151123 | immunity... at 99.72%
+    8       702aa, >28.2 | product: bacteriocin immunity protein | note: no note | protein_id: COM73718.1 | CROP01000007:61006-63114 | immunity... at 99.72%
+    9       702aa, >39.2 | product: bacteriocin immunity protein | note: no note | protein_id: COA67976.1 | CHPO01000002:36267-38375 | immunity... at 97.58%
+    10      702aa, >36.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJQ31854.1 | CLSP01000002:19049-21157 | immunity... at 100.00%
+    11      702aa, >35.2 | product: bacteriocin immunity protein | note: no note | protein_id: CIS40931.1 | CHNO01000004:74173-76281 | immunity... at 99.72%
+    12      702aa, >30.2 | product: bacteriocin immunity protein | note: no note | protein_id: CIS40931.1 | CHNO01000004:74173-76281 | immunity... at 99.72%
+    13      702aa, >30.2 | product: bacteriocin immunity protein | note: no note | protein_id: CJV34097.1 | CMAH01000025:21097-23205 | immunity... at 99.57%
 
-Before, I was only getting up to the first whitespace in these seq descriptions like `0     702aa, >32.2...`. Hope that helps you save some precious time while hammering your head against the wall. 
+
+Before, I was only getting up to the first whitespace in these seq descriptions like `0     702aa, >32.2...`. Hope that helps you save some precious time while hammering your head against the wall.
