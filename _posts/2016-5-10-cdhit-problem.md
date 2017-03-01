@@ -4,7 +4,7 @@ title: Solving the cd-hit -d flag problem
 comments: true
 ---
 
-When you do `cd-hit`, you get a `.clstr` file. Sometimes you need to parse that file for getting the sequences in the individual clusters. By default, in the cd-hit command, the `-d` flag is set to 0, which means you can only see the fasta sequence identifier until you hit a whitespace in your `.clstr` file. By putting in your preferred number with the `-d` flag you can extend the identifier to that many characters.
+When you do `cd-hit` to filter for identical or near identical sequences in any bioinformatics pipeline, you get a `.clstr` file. Sometimes you need to parse that file for getting the sequences in the individual clusters. By default, in the cd-hit command, the `-d` flag is set to 0, which means you can only see the fasta sequence identifier until you hit a whitespace in your `.clstr` file. By putting in your preferred number with the `-d` flag you can extend the identifier to that many characters.
 
 As of, May 5, 2016, the master branch of cd-hit in the github [repo](https://github.com/weizhongli/cdhit/) does not conform to the `-d` flag. As I needed the full fasta record description for each sequence in a cluster, this was indeed a headache. So, I searched for this problem. There was not much but an [issue](https://github.com/weizhongli/cdhit/issues/4) was indeed opened regarding the same problem in the github repo of cd-hit.
 
