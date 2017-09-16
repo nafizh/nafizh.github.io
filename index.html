@@ -1,37 +1,197 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+    <style type="text/css">
+/* Layout and HTML pieces the work of Jon Barron http://www.cs.berkeley.edu/~barron/ */
+      a {
+      color: #1772d1;
+      text-decoration:none;
+      }
+      a:focus, a:hover {
+      color: #f09227;
+      text-decoration:none;
+      }
+      body,td,th {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px
+      }
+      strong {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 14px
+      }
+      heading {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 700
+      }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <title>Md-Nafiz Hamid</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-60461591-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+  </head>
+
+  <body>
+    <table width="850" border="0" align="center" cellpadding="20">
+      <tr>
+	<td> 
+          <table width="100%" align="center" border="0" cellpadding="10">
+            <tr>
+              <td width="67%" valign="middle">
+		<p align="center"><font size="6">Nafiz Hamid</font></p>
+		<p align="justify">
+                    I am a PhD student in Bioinformatics at <a href="https://https://www.iastate.edu/">Iowa State University</a> 
+		    where I try to find bacteriocins 
+		    using machine learningstudying machine learning. I work with Iddo Friedberg at the computational biology lab. 
+		     
+		    I did my undergraduate in the Engineering
+                    Science Program at the <a
+                    href="http://engsci.utoronto.ca/">University of
+                    Toronto</a>. I did my senior year thesis in the <a
+                    href="http://learning.cs.toronto.edu/"> machine learning
+                    group</a> where I was very fortunate to work with Prof. <a
+                    href="http://www.cs.toronto.edu/~zemel/inquiry/home.php">
+                    Richard Zemel</a>.  <br><br>
+                     
+                    My current research focuses on using using neural networks
+                    for sequence-to-sequence/image-to-sequence tasks. But there
+                    are a lot of interesting problems in machine learning
+                    and I aspire to work on at least a few of them at some
+                    point. <br><br>
+
+                    From Oct 2015-Mar 2016, I visited the machine learning group at
+                    the <a href="http://cims.nyu.edu/"> Courant Institute at
+                    NYU.</a> Starting in June 2016, I will be a resident at <a
+                    href="https://research.google.com/teams/brain/">Google
+                    Research</a> as part of their Brain Residency Program. 
+		</p>
+		<p align=center>
+		  <a href="mailto:[firstname].[lastname]@umontreal.ca">email</a> /
+                  <a href="https://scholar.google.com/citations?user=GyoKzFwAAAAJ&hl=en">google scholar</a>
+		</p>
+              </td>
+              <td width="20%">
+              <br>
+              <br>
+		<img width="175"
+                     src="kelvin_xu.jpg" 
+                     alt="Kelvin Xu">
+	      </td>
+            </tr> 
+          </table>
+
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tr>
+              <td>
+                <font size="5">Publications </font> <!-- <font size="3">(for full publications, please see google scholars)</font> -->
+              </td>
+            </tr>
+          </table>
+
+	  <table width="100%" align="center" border="0" cellpadding="20">
+
+ 	    <tr>
+	      <td width="25%" valign="top">
+		<img src="teasers/unsupervised_perception.png" width="250" style="border-style: none">
+	      </td>
+	      <td width="75%" valign="top">
+		<p>
+                  <b>Unsupervised Perceptual Rewards for Imitation Learning</b><br>
+                  P. Sermanet*, <strong>K. Xu*</strong>, S. Levine <br>
+                  <i>Robotics: Science and Systems (RSS)</i>, 2017 <br> 
+                  <a href="coming soon">[paper]</a>
+		</p>
+	      </td>
+	    </tr>
+
+ 	    <tr>
+	      <td width="25%" valign="top">
+		<img src="teasers/actor_critic_for_sequence_prediction.png" width="250" style="border-style: none">
+	      </td>
+	      <td width="75%" valign="top">
+		<p>
+                  <b>An Actor-Critic Algorithm for Structured Prediction</b><br>
+                  D. Bahdanau, P. Brakel, <strong>K. Xu</strong>, A. Goyal, R. Lowe, <br> J. Pineau, A. Courville, Y. Bengio<br>
+                  <i>International Conference for Learning Representations (ICLR)</i>, 2017 <br> 
+                  <a href="https://openreview.net/forum?id=SJDaqqveg">[open review]</a>
+                  <a href="https://arxiv.org/abs/1607.07086">[arxiv]</a>
+		</p>
+	      </td>
+	    </tr>
+
+ 	    <tr>
+	      <td width="25%" valign="top">
+		<img src="teasers/manirec.png" width="250" style="border-style: none">
+	      </td>
+	      <td width="75%" valign="top">
+		<p>
+                  <b>A Controller-Recognizer Framework: How necessary is recognition for control?</b><br>
+                  M. Moczulski, <strong>K. Xu</strong>, A. Courville, K. Cho<br>
+                  <i>International Conference for Learning Representations (ICLR) Workshop</i>, 2016 <br> 
+                  <a href="http://arxiv.org/abs/1511.06428">[arxiv preprint]</a>
+		</p>
+	      </td>
+	    </tr> 
+
+ 	    <tr>
+	      <td width="25%" valign="top">
+		<img src="teasers/machine_translation.png" width="250" style="border-style: none">
+	      </td>
+	      <td width="75%" valign="top">
+		<p>
+                  <b>On Using Monolingual Corpora in Neural Machine Translation</b><br>
+                  C. Gulchere, O. Firat, <strong>K. Xu</strong>, K. Cho, L. Barrault, <br> H. Lin, F. Bougares, H. Schwenk, Y. Bengio<br>
+                  <i>Computer Speech and Language</i>, 2016 <br> 
+                  <a href="http://arxiv.org/abs/1503.03535">[arxiv preprint]</a>
+                  <a href="http://104.131.78.120">[project page]</a>
+		</p>
+	      </td>
+	    </tr> 
+
+	    <tr>
+	      <td width="25%" valign="top">
+		<img src="teasers/model_diag.png" width="250" style="border-style: none">
+	      </td>
+	      <td width="75%" valign="top">
+		<p>
+                  <b>Show, Attend and Tell: Neural Image Caption Generation with Visual Attention</b><br>
+                  <strong>K. Xu</strong>, J. Ba, R. Kiros, K. Cho, A. Courville, <br> R. Salakhutdinov, R. Zemel, Y. Bengio (2015)<br>
+                  <i>International Conference for Machine Learning (ICML)</i>, 2015 <br> 
+                  <a href="http://arxiv.org/abs/1502.03044">[paper]</a>
+                  <a href="projects/capgen.html">[project page]</a>
+                  <a href="https://www.cs.toronto.edu/~rkiros/inceptionism_captions.html">[inceptionism-captions]</a>
+                  <a href="https://www.cs.toronto.edu/~rkiros/abstract_captions.html">[abstract-captions]</a>
+                  <a href="https://github.com/kelvinxu/arctic-captions">[code]</a>
+		</p>
+	      </td>
+	    </tr> 
+          </table> 
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tr>
+              <td>
+                <br>
+                <p align="right"><font size="2">
+                  <a href="http://www.cs.berkeley.edu/~barron/">(This website sure is swell)</a>
+                  </font>
+                </p>
+              </td>
+            </tr>
+          </table>
+    </table>
+  </body>
+</html>
