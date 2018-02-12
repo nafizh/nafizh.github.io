@@ -4,7 +4,7 @@
 
 permalink:           pretty
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 # Setup
 title:               Md Nafiz Hamid
