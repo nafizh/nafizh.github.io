@@ -32,7 +32,7 @@ github:
 
 
 pages_list:
-  Archive: '/blog'
+  Blog: '/blog'
 
 # Google services
 google_analytics: UA-72747784-1
