@@ -9,7 +9,7 @@ plugins: [jekyll-paginate]
 # Setup
 title:               Md Nafiz Hamid
 tagline:             PhD student at Iowa State University
-url:                 https://nafiz.github.io
+url:                 https://nafizh.github.io
 paginate:            1
 baseurl:             ""
 
@@ -23,8 +23,7 @@ sass:
 # About/contact
 author:
   name:              Md Nafiz Hamid
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  url:               http://nafiz.ml
 
 # Custom vars
 version:             2.0.0
@@ -33,8 +32,6 @@ github:
 
 
 pages_list:
-  About: '/about'
-  Research: '/research'
   Archive: '/archive'
 
 # Google services
