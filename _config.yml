@@ -7,7 +7,7 @@ permalink:           pretty
 plugins: [jekyll-paginate]
 
 # Setup
-title:               Md Nafiz Hamid
+title:               Nafiz Hamid
 tagline:             PhD student at Iowa State University
 url:                 https://nafizh.github.io
 paginate:            1
@@ -22,7 +22,7 @@ sass:
 
 # About/contact
 author:
-  name:              Md Nafiz Hamid
+  name:              Nafiz Hamid
   url:               http://nafiz.ml
 
 # Custom vars
