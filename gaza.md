@@ -1,4 +1,4 @@
-# The Joker Was Right: Liberalism's Ethical Collapse in Times of Crisis
+
 
 *By Nafiz Hamid* 
 *January 15, 2025*
