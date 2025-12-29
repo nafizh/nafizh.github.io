@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FEFDFB;
+            --text: #1C1917;
+            --text-light: #78716C;
+            --text-muted: #A8A29E;
+            --line: #E7E5E4;
+            --accent: #B45309;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 17px;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 5rem;
+        }
+
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+        }
+
+        .intro {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .intro strong {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Nav */
+        nav {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Experience */
+        .exp-item {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .exp-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-company {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .exp-role {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .exp-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 4rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 3rem;
+        }
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--text);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        /* Papers */
+        .paper {
+            margin-bottom: 1.5rem;
+        }
+
+        .paper-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .paper-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .paper-meta span {
+            color: var(--accent);
+        }
+
+        /* Skills */
+        .skills-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        /* Contact */
+        .contact-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-row a {
+            font-size: 0.95rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-row a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+            .name {
+                font-size: 2.75rem;
+            }
+            .intro {
+                font-size: 1.25rem;
+            }
+            .exp-top {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name">Nafiz Hamid</h1>
+            <p class="title">Senior AI/ML Engineer at Mayo Clinic</p>
+            <p class="intro">
+                I build <strong>AI systems that actually work</strong> in production. Harvard postdoc turned industry engineer, now shipping LLM platforms used by thousands in healthcare.
+            </p>
+            <nav>
+                <a href="mailto:nh@nafiz.bio">Email</a>
+                <a href="https://github.com/nafizh">GitHub</a>
+                <a href="https://linkedin.com/in/nafizhamid">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ">Scholar</a>
+            </nav>
+        </header>
+
+        <section>
+            <h2 class="section-title">Experience</h2>
+
+            <div class="exp-item">
+                <div class="exp-top">
+                    <h3 class="exp-company">Mayo Clinic</h3>
+                    <span class="exp-date">2024 — Present</span>
+                </div>
+                <p class="exp-role">Senior AI/ML Engineer</p>
+                <p class="exp-desc">
+                    Architecting enterprise AI search on Vertex AI and Gemini. Building validation harnesses with 99% accuracy. The kind of infrastructure that lets you deploy LLMs in healthcare without losing sleep.
+                </p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-top">
+                    <h3 class="exp-company">Nobias Therapeutics</h3>
+                    <span class="exp-date">2021 — 2024</span>
+                </div>
+                <p class="exp-role">AI/ML Engineer — First Hire</p>
+                <p class="exp-desc">
+                    Built the ML infrastructure from scratch at this AI drug discovery startup. RAG pipelines, fine-tuned models, agent systems. The startup reality of shipping fast while maintaining quality.
+                </p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-top">
+                    <h3 class="exp-company">Harvard University</h3>
+                    <span class="exp-date">2020 — 2021</span>
+                </div>
+                <p class="exp-role">Postdoctoral Scientist</p>
+                <p class="exp-desc">
+                    PyTorch models on genomic data. Reviewer for NeurIPS, ICLR, ISMB. The academic years that taught me what makes research useful versus just publishable.
+                </p>
+            </div>
+        </section>
+
+        <div class="stats">
+            <div>
+                <div class="stat-num">949</div>
+                <div class="stat-label">Citations</div>
+            </div>
+            <div>
+                <div class="stat-num">7</div>
+                <div class="stat-label">h-index</div>
+            </div>
+            <div>
+                <div class="stat-num">4+</div>
+                <div class="stat-label">Years Industry</div>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="section-title">Selected Work</h2>
+
+            <div class="paper">
+                <p class="paper-title">The CAFA challenge reports improved protein function prediction</p>
+                <p class="paper-meta">Genome Biology, 2019 — <span>519 citations</span></p>
+            </div>
+
+            <div class="paper">
+                <p class="paper-title">Identifying Antimicrobial Peptides using Word Embedding with Deep RNNs</p>
+                <p class="paper-meta">Bioinformatics, 2019 — <span>141 citations</span></p>
+            </div>
+
+            <div class="paper">
+                <p class="paper-title">MetaMiner: A Scalable Peptidogenomics Approach</p>
+                <p class="paper-meta">Cell Systems, 2019 — <span>86 citations</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Technical</h2>
+            <p class="skills-text">
+                Python, PyTorch, Vertex AI, Gemini, GPT-4, Llama, RAG, ColBERT, DSPy, LangGraph, FastAPI, GCP, AWS, Docker, Kubernetes, BigQuery, PostgreSQL
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Education</h2>
+            <p class="skills-text">
+                PhD in Computational Biology, Iowa State University<br>
+                BSc in Computer Science, Islamic University of Technology
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-row">
+                <a href="mailto:nh@nafiz.bio">nh@nafiz.bio</a>
+                <a href="https://github.com/nafizh">github.com/nafizh</a>
+                <a href="https://linkedin.com/in/nafizhamid">linkedin.com/in/nafizhamid</a>
+            </div>
+        </section>
+
+        <footer>
+            Building things that work.
+        </footer>
+    </div>
+</body>
+</html>

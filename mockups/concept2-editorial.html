@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid - Concept 2: Editorial Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf8f5;
+            --bg-cream: #f5f2ed;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --accent: #c54b32;
+            --accent-dark: #a13d28;
+            --border: #e0dcd5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Source Sans 3', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        /* Paper texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .overline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .name {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            font-optical-sizing: auto;
+        }
+
+        .title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Links */
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 3rem auto;
+        }
+
+        /* Intro with drop cap */
+        .intro {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            text-align: left;
+        }
+
+        .intro::first-letter {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 4.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.75rem;
+            margin-top: 0.1rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Pull quote */
+        .pull-quote {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.75rem;
+            font-style: italic;
+            color: var(--accent);
+            text-align: center;
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            line-height: 1.4;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--text);
+            display: inline-block;
+        }
+
+        /* Experience grid */
+        .experience-grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+
+        .exp-meta {
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .exp-meta {
+                text-align: left;
+            }
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        .exp-location {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .exp-content h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-content .role {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-content p {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-cream);
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Skills */
+        .skills-list {
+            columns: 2;
+            column-gap: 3rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 500px) {
+            .skills-list {
+                columns: 1;
+            }
+        }
+
+        .skills-list li {
+            margin-bottom: 0.5rem;
+            break-inside: avoid;
+        }
+
+        /* Publications */
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-list li {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pub-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .pub-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .pub-citations {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            html {
+                font-size: 16px;
+            }
+            .container {
+                padding: 3rem 1.5rem;
+            }
+            .name {
+                font-size: 2.5rem;
+            }
+            .pull-quote {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="overline">AI/ML Engineering</p>
+            <h1 class="name">Nafiz Hamid</h1>
+            <p class="title">Senior AI/ML Engineer at Mayo Clinic</p>
+            <nav class="links">
+                <a href="mailto:nh@nafiz.bio">Email</a>
+                <a href="https://github.com/nafizh">GitHub</a>
+                <a href="https://linkedin.com/in/nafizhamid">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ">Google Scholar</a>
+            </nav>
+        </header>
+
+        <div class="divider"></div>
+
+        <p class="intro">
+            Harvard-trained engineer who turns AI products from slideware into dependable, production-grade software. At Mayo Clinic, I ship Gemini-powered conversational search systems used by thousands. At Nobias, I was the first engineering hire, building the ML infrastructure that took an AI drug discovery startup from prototype to production.
+        </p>
+
+        <blockquote class="pull-quote">
+            "Building AI systems that actually work in production, not just in demos."
+        </blockquote>
+
+        <div class="stats-row">
+            <div class="stat">
+                <span class="stat-number">99%</span>
+                <p class="stat-label">Field-Level Accuracy</p>
+            </div>
+            <div class="stat">
+                <span class="stat-number">80%</span>
+                <p class="stat-label">Query Time Reduced</p>
+            </div>
+            <div class="stat">
+                <span class="stat-number">949</span>
+                <p class="stat-label">Citations</p>
+            </div>
+            <div class="stat">
+                <span class="stat-number">1st</span>
+                <p class="stat-label">Engineering Hire</p>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="section-header">Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">2024 - Present</span>
+                        <span class="exp-location">Rochester, MN</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Mayo Clinic</h3>
+                        <p class="role">Senior AI/ML Engineer</p>
+                        <p>Architecting enterprise AI search on Vertex AI (Gemini) with FastAPI. Building validation harnesses with schema-constrained outputs achieving 99% accuracy. Implementing tracing and monitoring to meet production SLOs.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">2021 - 2024</span>
+                        <span class="exp-location">Mountain View, CA</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Nobias Therapeutics</h3>
+                        <p class="role">AI/ML Engineer, First Hire</p>
+                        <p>Led cloud-native ML/LLM pipeline design on AWS. Built RAG stack with ColBERT retrieval integrated with GPT-4, Llama, and Mistral. Owned eval-first pipelines with DSPy, improving entity stratification by +25% macro-F1.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">2020 - 2021</span>
+                        <span class="exp-location">Cambridge, MA</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Harvard University</h3>
+                        <p class="role">Postdoctoral Scientist</p>
+                        <p>Engineered PyTorch models on large sequence datasets. Served as reviewer for NeurIPS, ICLR, and ISMB.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">2012 - 2014</span>
+                        <span class="exp-location">Dhaka, Bangladesh</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Samsung R&D</h3>
+                        <p class="role">Software Engineer</p>
+                        <p>Built C++ benchmarking tools for Tizen OS. Integrated test suites into CI for automated regression detection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header">Education</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">2014 - 2019</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Iowa State University</h3>
+                        <p class="role">PhD, Computational Biology</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">2009 - 2012</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Islamic University of Technology</h3>
+                        <p class="role">BSc, Computer Science</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header">Technical Skills</h2>
+            <ul class="skills-list">
+                <li><strong>LLMs:</strong> Vertex AI, Gemini, GPT-4, Llama, Mistral</li>
+                <li><strong>RAG:</strong> ColBERT, Faiss, Weaviate, Pinecone</li>
+                <li><strong>Agents:</strong> DSPy, LangGraph, LangChain</li>
+                <li><strong>ML:</strong> PyTorch, scikit-learn, fine-tuning (LoRA)</li>
+                <li><strong>Languages:</strong> Python, R, SQL, TypeScript, C++</li>
+                <li><strong>Cloud:</strong> GCP, AWS, Docker, Kubernetes</li>
+                <li><strong>Data:</strong> BigQuery, PostgreSQL, MySQL</li>
+                <li><strong>Tools:</strong> FastAPI, Git, GitHub Actions, CI/CD</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-header">Selected Publications</h2>
+            <ul class="pub-list">
+                <li>
+                    <p class="pub-title">The CAFA challenge reports improved protein function prediction and new functional annotations</p>
+                    <p class="pub-meta">Genome Biology, 2019 &middot; <span class="pub-citations">519 citations</span></p>
+                </li>
+                <li>
+                    <p class="pub-title">Identifying Antimicrobial Peptides using Word Embedding with Deep Recurrent Neural Networks</p>
+                    <p class="pub-meta">Bioinformatics, 2019 &middot; <span class="pub-citations">141 citations</span></p>
+                </li>
+                <li>
+                    <p class="pub-title">MetaMiner: A Scalable Peptidogenomics Approach for Discovery of Ribosomal Peptide Natural Products</p>
+                    <p class="pub-meta">Cell Systems, 2019 &middot; <span class="pub-citations">86 citations</span></p>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>PhD, Iowa State University &middot; Postdoc, Harvard Medical School</p>
+        </footer>
+    </div>
+</body>
+</html>

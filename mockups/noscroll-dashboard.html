@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid - Dashboard Layout</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FF6B00;
+            --white: #FFFFFF;
+            --black: #000000;
+            --yellow: #FFE500;
+            --blue: #00D4FF;
+            --green: #00FF85;
+            --lime: #BFFF00;
+            --coral: #FFCDB2;
+            --lavender: #DDD6FE;
+            --border: 3px solid var(--black);
+            --shadow: 4px 4px 0 var(--black);
+            --shadow-sm: 2px 2px 0 var(--black);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--black);
+            padding: 1rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 280px 1fr 1fr;
+            grid-template-rows: 1fr auto;
+            gap: 1rem;
+            height: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 1.25rem;
+            overflow: hidden;
+        }
+
+        /* Identity Column */
+        .identity-card {
+            grid-row: 1 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .headshot {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid var(--black);
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            width: 100%;
+        }
+
+        .social-links a {
+            font-size: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.1s;
+        }
+
+        .social-links a:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Timeline Column */
+        .timeline-card {
+            overflow-y: auto;
+        }
+
+        .timeline-card h2 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 0.75rem;
+            background: var(--black);
+            color: var(--yellow);
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem;
+            border: 2px solid var(--black);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-logo {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.2rem;
+        }
+
+        .timeline-logo img {
+            max-width: 30px;
+            max-height: 30px;
+            object-fit: contain;
+        }
+
+        .timeline-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .timeline-date {
+            font-size: 0.55rem;
+            font-weight: 700;
+            padding: 0.1rem 0.35rem;
+            background: var(--lime);
+            border: 1px solid var(--black);
+            display: inline-block;
+            margin-bottom: 0.1rem;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .timeline-desc {
+            font-size: 0.6rem;
+            color: #555;
+            line-height: 1.25;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Timeline backgrounds */
+        .mayo { background: var(--coral); }
+        .nobias { background: #1a1a2e; }
+        .nobias .timeline-title, .nobias .timeline-desc { color: var(--white); }
+        .nobias .timeline-date { background: var(--blue); }
+        .harvard { background: var(--lime); }
+        .iowa { background: var(--lavender); }
+        .samsung { background: var(--blue); }
+        .iut { background: var(--green); }
+
+        /* Bio + Podcast Column */
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bio-card {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .bio-card h2 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 0.75rem;
+            background: var(--black);
+            color: var(--yellow);
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .bio-card p {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .bio-card a {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .bio-card a:hover {
+            background: var(--yellow);
+        }
+
+        /* Podcast Card */
+        .podcast-card {
+            background: var(--blue);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+        }
+
+        .podcast-card h2 {
+            display: none;
+        }
+
+        .podcast-thumb {
+            width: 80px;
+            height: 45px;
+            border: 2px solid var(--black);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .podcast-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn::after {
+            content: '';
+            border-left: 7px solid var(--black);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            margin-left: 2px;
+        }
+
+        .podcast-info h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+
+        .podcast-info p {
+            font-size: 0.65rem;
+            line-height: 1.3;
+        }
+
+        .podcast-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Identity Column -->
+        <div class="card identity-card">
+            <img src="../images/nafiz_hamid.jpg" alt="Nafiz Hamid" class="headshot">
+            <h1>Nafiz Hamid</h1>
+            <nav class="social-links">
+                <a href="https://twitter.com/drnafizhamid">Twitter</a>
+                <a href="https://github.com/nafizh">GitHub</a>
+                <a href="https://linkedin.com/in/nafizhamid">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ">Scholar</a>
+                <a href="#" onclick="this.href='mailto:'+'nh'+'@'+'nafiz.bio'">Email</a>
+            </nav>
+        </div>
+
+        <!-- Timeline Column -->
+        <div class="card timeline-card">
+            <h2>Journey</h2>
+            <div class="timeline-list">
+                <div class="timeline-item mayo">
+                    <div class="timeline-logo" style="background: var(--coral);">
+                        <img src="../images/logos/mayo.svg" alt="Mayo">
+                    </div>
+                    <div class="timeline-info">
+                        <span class="timeline-date">2024 — present</span>
+                        <p class="timeline-title">Mayo Clinic</p>
+                        <p class="timeline-desc">Senior AI/ML Engineer. Enterprise AI systems—search, conversation platforms, evaluation frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item nobias">
+                    <div class="timeline-logo" style="background: #0a0a1a;">
+                        <img src="../images/logos/nobias.png" alt="Nobias">
+                    </div>
+                    <div class="timeline-info">
+                        <span class="timeline-date">2021 — 2024</span>
+                        <p class="timeline-title">Nobias Therapeutics</p>
+                        <p class="timeline-desc">First engineering hire. ML infrastructure—cloud-native pipelines, retrieval systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item harvard">
+                    <div class="timeline-logo" style="background: var(--lime);">
+                        <img src="../images/logos/harvard.png" alt="Harvard">
+                    </div>
+                    <div class="timeline-info">
+                        <span class="timeline-date">2020 — 2021</span>
+                        <p class="timeline-title">Harvard Medical School</p>
+                        <p class="timeline-desc">Postdoc. PyTorch models—transformers, attention, custom architectures.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item iowa">
+                    <div class="timeline-logo" style="background: var(--lavender);">
+                        <img src="../images/IowaStateUniversitySeal.png" alt="Iowa State">
+                    </div>
+                    <div class="timeline-info">
+                        <span class="timeline-date">2014 — 2019</span>
+                        <p class="timeline-title">Iowa State — PhD</p>
+                        <p class="timeline-desc">PhD in Computational Biology. Deep learning for biological sequences.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item samsung">
+                    <div class="timeline-logo" style="background: var(--blue);">
+                        <img src="../images/logos/samsung.svg" alt="Samsung">
+                    </div>
+                    <div class="timeline-info">
+                        <span class="timeline-date">2012 — 2014</span>
+                        <p class="timeline-title">Samsung R&D</p>
+                        <p class="timeline-desc">Software Engineer. C++ benchmarking, testing frameworks, CI/CD.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item iut">
+                    <div class="timeline-logo" style="background: var(--green);">
+                        <img src="../images/iut.png" alt="IUT">
+                    </div>
+                    <div class="timeline-info">
+                        <span class="timeline-date">2009 — 2012</span>
+                        <p class="timeline-title">IUT — BSc</p>
+                        <p class="timeline-desc">BSc in Computer Science and Engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bio + Podcast Column -->
+        <div class="content-column">
+            <div class="card bio-card">
+                <h2>About</h2>
+                <p>
+                    I'm a Senior AI/ML Engineer at <a href="https://www.mayoclinic.org/">Mayo Clinic</a>, building enterprise AI systems—LLM-powered search, conversational agents, and the infrastructure that makes them reliable at scale. Before this, I was the first engineering hire at <a href="https://nobiastx.com/">Nobias Therapeutics</a>, where I led a small team designing cloud-native ML pipelines, RAG systems, and agent automations on AWS.
+                </p>
+                <p>
+                    I started my career as a software engineer at Samsung right out of my CS degree—building C++ infrastructure, automated testing, and CI/CD pipelines for code running on millions of devices. That foundation in production-grade engineering shaped how I think about building reliable systems.
+                </p>
+                <p>
+                    I took a detour through academia—PhD at <strong>Iowa State</strong> pioneering neural network approaches for biological sequence modeling, then a postdoc at <strong>Harvard Medical School</strong> building deep learning systems. Now I'm back in industry where I started. These days I care most about what makes AI actually work in production: evaluation harnesses, guardrails, structured outputs, the infrastructure that lets you ship LLMs without breaking things.
+                </p>
+            </div>
+
+            <div class="card podcast-card">
+                <a href="https://youtu.be/fX_r8YbA4mc" target="_blank">
+                    <div class="podcast-thumb">
+                        <img src="https://img.youtube.com/vi/fX_r8YbA4mc/maxresdefault.jpg" alt="Podcast">
+                        <div class="play-btn"></div>
+                    </div>
+                    <div class="podcast-info">
+                        <h3>AI in Action Podcast</h3>
+                        <p>Discussing how we built ML pipelines and used AI to accelerate drug discovery for rare pediatric diseases at Nobias.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

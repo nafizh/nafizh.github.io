@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid - Concept D: Minimal Chiang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a192f;
+            --navy-light: #112240;
+            --navy-lighter: #233554;
+            --slate: #8892b0;
+            --slate-light: #a8b2d1;
+            --white: #e6f1ff;
+            --green: #64ffda;
+            --green-tint: rgba(100, 255, 218, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 17px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--navy);
+            color: var(--slate);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background: var(--green-tint);
+            color: var(--green);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.25rem;
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--slate-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-links .num {
+            color: var(--green);
+            margin-right: 0.25rem;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 5rem;
+        }
+
+        .hero-intro {
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            color: var(--green);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-name {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--slate);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            max-width: 540px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-btn {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--green);
+            background: transparent;
+            border: 1px solid var(--green);
+            padding: 1rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--green-tint);
+        }
+
+        /* Section styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--white);
+            white-space: nowrap;
+        }
+
+        .section-header .num {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.25rem;
+            color: var(--green);
+        }
+
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--navy-lighter);
+            max-width: 300px;
+        }
+
+        /* About section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 3rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .about-text a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .about-text a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem 1rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .skills-list li {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--slate-light);
+        }
+
+        .skills-list li::before {
+            content: '▹';
+            color: var(--green);
+            margin-right: 0.5rem;
+        }
+
+        /* Experience */
+        .exp-list {
+            max-width: 700px;
+        }
+
+        .exp-item {
+            margin-bottom: 3rem;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .exp-title .company {
+            color: var(--green);
+        }
+
+        .exp-date {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--slate);
+        }
+
+        .exp-desc {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Papers */
+        .paper-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--navy-lighter);
+        }
+
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+
+        .paper-title {
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            transition: color 0.2s;
+        }
+
+        .paper-title:hover {
+            color: var(--green);
+        }
+
+        .paper-meta {
+            font-size: 0.9rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .paper-citations {
+            color: var(--green);
+        }
+
+        /* Education */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .edu-card {
+            background: var(--navy-light);
+            border-radius: 4px;
+            padding: 1.5rem;
+            border-top: 3px solid var(--green);
+        }
+
+        .edu-card h3 {
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 6rem 0;
+        }
+
+        .contact .overline {
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+            margin-bottom: 2rem;
+        }
+
+        /* Social links */
+        .social-links {
+            position: fixed;
+            bottom: 0;
+            left: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .social-links::after {
+            content: '';
+            width: 1px;
+            height: 90px;
+            background: var(--slate);
+        }
+
+        .social-links a {
+            color: var(--slate);
+            font-size: 1.25rem;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--green);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: var(--slate);
+        }
+
+        footer a {
+            color: var(--slate);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--green);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero-name {
+                font-size: 2.5rem;
+            }
+            .hero-tagline {
+                font-size: 1.75rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .social-links {
+                display: none;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">NH</div>
+        <ul class="nav-links">
+            <li><a href="#about"><span class="num">01.</span>About</a></li>
+            <li><a href="#experience"><span class="num">02.</span>Experience</a></li>
+            <li><a href="#papers"><span class="num">03.</span>Papers</a></li>
+            <li><a href="#contact"><span class="num">04.</span>Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <p class="hero-intro">Hi, my name is</p>
+            <h1 class="hero-name">Nafiz Hamid.</h1>
+            <h2 class="hero-tagline">I build AI systems that work.</h2>
+            <p class="hero-desc">
+                I'm a Senior AI/ML Engineer at Mayo Clinic, focused on building production LLM systems with proper guardrails. Previously first engineering hire at an AI drug discovery startup. Harvard postdoc, Iowa State PhD.
+            </p>
+            <a href="mailto:nh@nafiz.bio" class="cta-btn">Get In Touch</a>
+        </section>
+
+        <section id="about">
+            <div class="section-header">
+                <span class="num">01.</span>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I build AI systems that actually work in production. Currently at <a href="#">Mayo Clinic</a>, previously the first engineering hire at an AI drug discovery startup. I did a postdoc at Harvard, got a PhD at Iowa State, but these days I'm firmly in industry—focused on shipping reliable ML systems, not publishing papers.
+                    </p>
+                    <p>
+                        What I care about: evaluation harnesses, guardrails, schema constraints—the boring infrastructure that makes AI trustworthy. If an LLM system is going to be used by thousands of people in healthcare, it better work correctly every time.
+                    </p>
+                    <p>Here are some technologies I work with:</p>
+                    <ul class="skills-list">
+                        <li>Python / PyTorch</li>
+                        <li>Vertex AI / Gemini</li>
+                        <li>RAG / ColBERT</li>
+                        <li>DSPy / LangGraph</li>
+                        <li>GCP / AWS</li>
+                        <li>FastAPI / Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header">
+                <span class="num">02.</span>
+                <h2>Where I've Worked</h2>
+            </div>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-title">Senior AI/ML Engineer <span class="company">@ Mayo Clinic</span></h3>
+                        <span class="exp-date">Oct 2024 - Present</span>
+                    </div>
+                    <p class="exp-desc">
+                        Building an enterprise AI search platform on Vertex AI that thousands of employees use daily. The interesting challenge: making LLM outputs reliable enough for healthcare—schema constraints, validation harnesses, the kind of guardrails that let you sleep at night.
+                    </p>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-title">AI/ML Engineer <span class="company">@ Nobias Therapeutics</span></h3>
+                        <span class="exp-date">Aug 2021 - Aug 2024</span>
+                    </div>
+                    <p class="exp-desc">
+                        Joined as the first engineering hire when it was just an idea about using AI to find drugs for kids with rare diseases. Built the ML infrastructure from scratch—RAG pipelines with ColBERT retrieval, fine-tuned models, agent systems using DSPy. The startup stuff: wearing many hats, shipping fast.
+                    </p>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-title">Postdoctoral Scientist <span class="company">@ Harvard</span></h3>
+                        <span class="exp-date">Jan 2020 - Aug 2021</span>
+                    </div>
+                    <p class="exp-desc">
+                        Built PyTorch models on large genomic datasets. Served as reviewer for NeurIPS, ICLR, and ISMB—which taught me what makes research actually useful versus just publishable.
+                    </p>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-title">Software Engineer <span class="company">@ Samsung R&D</span></h3>
+                        <span class="exp-date">Dec 2012 - Jun 2014</span>
+                    </div>
+                    <p class="exp-desc">
+                        My first real engineering job. Built C++ benchmarking tools for Tizen OS and integrated them into CI. Learned the fundamentals of shipping software.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="papers">
+            <div class="section-header">
+                <span class="num">03.</span>
+                <h2>Select Papers</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem; max-width: 600px;">From my academic life. I don't actively publish anymore, but these still get cited.</p>
+
+            <div class="paper-item">
+                <p class="paper-title">The CAFA challenge reports improved protein function prediction</p>
+                <p class="paper-meta">Genome Biology, 2019 · <span class="paper-citations">519 citations</span></p>
+            </div>
+
+            <div class="paper-item">
+                <p class="paper-title">Identifying Antimicrobial Peptides using Word Embedding with Deep RNNs</p>
+                <p class="paper-meta">Bioinformatics, 2019 · <span class="paper-citations">141 citations</span></p>
+            </div>
+
+            <div class="paper-item">
+                <p class="paper-title">MetaMiner: A Scalable Peptidogenomics Approach</p>
+                <p class="paper-meta">Cell Systems, 2019 · <span class="paper-citations">86 citations</span></p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <span class="num">04.</span>
+                <h2>Education</h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>Iowa State University</h3>
+                    <p>PhD, Computational Biology · 2014 - 2019</p>
+                </div>
+                <div class="edu-card">
+                    <h3>Islamic University of Technology</h3>
+                    <p>BSc, Computer Science · 2009 - 2012</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <p class="overline">05. What's Next?</p>
+            <h2>Get In Touch</h2>
+            <p>
+                I'm always open to discussing interesting problems, potential collaborations, or opportunities at companies building meaningful AI products.
+            </p>
+            <a href="mailto:nh@nafiz.bio" class="cta-btn">Say Hello</a>
+        </section>
+    </div>
+
+    <div class="social-links">
+        <a href="https://github.com/nafizh" title="GitHub">GH</a>
+        <a href="https://linkedin.com/in/nafizhamid" title="LinkedIn">LI</a>
+        <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ" title="Scholar">GS</a>
+    </div>
+
+    <footer>
+        <p>949 citations · h-index 7</p>
+        <p>Inspired by <a href="https://brittanychiang.com">Brittany Chiang</a></p>
+    </footer>
+</body>
+</html>

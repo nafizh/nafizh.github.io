@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --yellow: #FFE500;
+            --pink: #FF6B9D;
+            --blue: #4169E1;
+            --green: #00D68F;
+            --orange: #FF8C42;
+            --purple: #A855F7;
+            --gray: #F5F5F5;
+            --border: 3px solid var(--black);
+            --shadow: 5px 5px 0 var(--black);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 17px;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--yellow);
+            color: var(--black);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background: var(--pink);
+            color: var(--black);
+        }
+
+        a {
+            color: var(--blue);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        a:hover {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.15rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            font-size: 0.9rem;
+        }
+
+        /* Divider */
+        hr {
+            border: none;
+            border-top: var(--border);
+            margin: 2.5rem 0;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1rem;
+            background: var(--black);
+            color: var(--yellow);
+            margin-bottom: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Highlight boxes */
+        .box {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .box.pink { background: var(--pink); }
+        .box.blue { background: var(--blue); color: var(--white); }
+        .box.blue a { color: var(--yellow); }
+        .box.green { background: var(--green); }
+        .box.orange { background: var(--orange); }
+        .box.purple { background: var(--purple); color: var(--white); }
+        .box.purple a { color: var(--yellow); }
+
+        .box-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .box-meta {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Timeline entry */
+        .timeline-entry {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--black);
+        }
+
+        .timeline-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Publications */
+        .pub {
+            padding: 0.75rem 0;
+            border-bottom: 2px dashed var(--black);
+        }
+
+        .pub:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-weight: 600;
+        }
+
+        .pub-meta {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .pub-meta .citations {
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        /* Stats inline */
+        .stats-inline {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: var(--border);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nafiz Hamid</h1>
+            <p class="tagline">I like to build AI systems that actually work in production.</p>
+            <nav class="links">
+                <a href="mailto:nh@nafiz.bio">email</a>
+                <a href="https://github.com/nafizh">github</a>
+                <a href="https://linkedin.com/in/nafizhamid">linkedin</a>
+                <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ">scholar</a>
+            </nav>
+        </header>
+
+        <hr>
+
+        <section>
+            <p>
+                I'm a Senior AI/ML Engineer at <a href="https://www.mayoclinic.org/">Mayo Clinic</a>, where I build enterprise AI systems on Google's Vertex AI. Before this, I was the first engineering hire at <a href="https://www.nobias.com/">Nobias Therapeutics</a>, a startup using AI to discover drugs for kids with rare diseases. I did a postdoc at <a href="https://hms.harvard.edu/">Harvard Medical School</a> and got my PhD from <a href="https://www.iastate.edu/">Iowa State</a> in Computational Biology.
+            </p>
+            <p>
+                I spent a long time in academia—PhD, postdoc, the whole thing—but for the last 4+ years I've been fully in industry. These days I care most about the boring stuff that makes AI actually reliable: evaluation harnesses, guardrails, schema constraints, the infrastructure that lets you deploy LLMs without breaking things.
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Work</h2>
+
+            <div class="timeline-entry">
+                <p class="timeline-date">2024 — present</p>
+                <p>
+                    At <strong>Mayo Clinic</strong> I'm building an enterprise AI search and conversation platform on Vertex AI (Gemini). Thousands of employees use it to query internal metadata. The interesting challenge is making LLM outputs reliable enough for healthcare—I built validation harnesses that hit 99% field-level accuracy, and structured-output checks for LLM-generated BigQuery SQL that cut manual query time by 80%.
+                </p>
+            </div>
+
+            <div class="timeline-entry">
+                <p class="timeline-date">2021 — 2024</p>
+                <p>
+                    I joined <strong>Nobias Therapeutics</strong> as the first engineering hire when it was basically just an idea. We were building AI to find drugs for kids with rare diseases. I led a small team designing cloud-native ML/LLM pipelines on AWS, shipped agent automations, retrieval systems, and fine-tuned models. Built an internal RAG stack with ColBERT retrieval integrated with GPT-4/Llama/Mistral. The startup stuff—wearing many hats, shipping fast, building practices like design reviews and testability from scratch.
+                </p>
+            </div>
+
+            <div class="timeline-entry">
+                <p class="timeline-date">2020 — 2021</p>
+                <p>
+                    <strong>Harvard Medical School / MGH / Broad Institute</strong> postdoc. Built PyTorch models on large sequence datasets to predict expression patterns. Spent time as a reviewer for NeurIPS, ICLR, and ISMB—which taught me what makes research actually useful versus just publishable.
+                </p>
+            </div>
+
+            <div class="timeline-entry">
+                <p class="timeline-date">2014 — 2019</p>
+                <p>
+                    PhD at <strong>Iowa State University</strong> in Bioinformatics/Computational Biology with <a href="http://iddo-friedberg.org">Iddo Friedberg</a>. Worked on using deep learning to find new antimicrobial peptides (bacteriocins) and predict antibiotic resistance. This was back when applying word embeddings to biological sequences was still novel.
+                </p>
+            </div>
+
+            <div class="timeline-entry">
+                <p class="timeline-date">2012 — 2014</p>
+                <p>
+                    My first real engineering job at <strong>Samsung R&D</strong> in Bangladesh. Built C++ benchmarking tools for Tizen (their TV/mobile OS) and integrated them into CI for nightly builds. Learned the fundamentals of shipping software.
+                </p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Skills</h2>
+            <p>
+                <strong>Languages:</strong> Python, R, SQL (proficient); TypeScript, C++, Java (familiar)<br>
+                <strong>LLMs/ML:</strong> PyTorch, scikit-learn; Vertex AI & Gemini, GPT-4, Llama; RAG with ColBERT, Faiss, Weaviate, Pinecone; agents via DSPy, LangGraph, LangChain; fine-tuning with LoRA/QLoRA; evaluation harnesses, schema/guardrails<br>
+                <strong>Cloud & Data:</strong> Google Cloud (Vertex AI, BigQuery), AWS; Docker, Kubernetes, CI/CD; PostgreSQL, MySQL<br>
+                <strong>Tools:</strong> FastAPI, Pandas, NumPy, Git & GitHub Actions
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Publications</h2>
+            <p>From my academic life. I don't actively publish anymore, but some of this work still gets cited.</p>
+
+            <div class="box green">
+                <div class="stats-inline">
+                    <div class="stat-item">
+                        <div class="stat-num">949</div>
+                        <div class="stat-label">Citations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">7</div>
+                        <div class="stat-label">h-index</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">7</div>
+                        <div class="stat-label">i10-index</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub">
+                <p class="pub-title">The CAFA challenge reports improved protein function prediction and new functional annotations for hundreds of genes through experimental screens</p>
+                <p class="pub-meta">Genome Biology, 2019 · <span class="citations">519 citations</span></p>
+            </div>
+
+            <div class="pub">
+                <p class="pub-title">Identifying Antimicrobial Peptides using Word Embedding with Deep Recurrent Neural Networks</p>
+                <p class="pub-meta">Bioinformatics, 2019 · <span class="citations">141 citations</span></p>
+            </div>
+
+            <div class="pub">
+                <p class="pub-title">MetaMiner: A Scalable Peptidogenomics Approach for Discovery of Ribosomal Peptide Natural Products</p>
+                <p class="pub-meta">Cell Systems, 2019 · <span class="citations">86 citations</span></p>
+            </div>
+
+            <div class="pub">
+                <p class="pub-title">Novel antimicrobial peptide discovery using machine learning and biophysical selection of minimal bacteriocin domains</p>
+                <p class="pub-meta">Drug Development Research, 2019 · <span class="citations">60 citations</span></p>
+            </div>
+
+            <div class="pub">
+                <p class="pub-title">Applications of Blockchain in the Financial Sector and a Peer-to-Peer Global Barter Web</p>
+                <p class="pub-meta">Advances in Computers, 2018 · <span class="citations">56 citations</span></p>
+            </div>
+
+            <p style="margin-top: 1rem;"><a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ">Full list on Google Scholar →</a></p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Education</h2>
+            <p>
+                <strong>Iowa State University</strong> — PhD in Bioinformatics and Computational Biology, 2019<br>
+                <strong>Islamic University of Technology</strong> — BSc in Computer Science and Engineering, 2012
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Misc</h2>
+            <p>
+                Reviewer for NeurIPS, ICLR, ISMB/ECCB, Bioinformatics, PLOS Computational Biology, and a few IEEE journals. Attended Bay Area Deep Learning School at Stanford back in 2016. Did Google Summer of Code in 2015 building visualization tools for pharmacokinetic models.
+            </p>
+        </section>
+
+        <footer>
+            <p>Building things that work.</p>
+        </footer>
+    </div>
+</body>
+</html>

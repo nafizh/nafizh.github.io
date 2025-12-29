@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid - Concept B: Vibrant Gradient</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+            --accent-yellow: #ffd166;
+            --accent-pink: #ef476f;
+            --accent-teal: #06d6a0;
+            --text-dark: #1a1a2e;
+            --text-light: #ffffff;
+            --bg-light: #fafbfc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Hero with gradient */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            padding: 5rem 2rem 6rem;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.35rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Colorful link pills */
+        .links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .link-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.25rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .link-pill:hover {
+            background: white;
+            color: var(--gradient-start);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Main content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* About section with colored accent */
+        .about {
+            background: white;
+            margin-top: -3rem;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-yellow), var(--accent-pink), var(--gradient-start));
+            border-radius: 24px 24px 0 0;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .about p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Section styling */
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-header .emoji {
+            font-size: 1.75rem;
+        }
+
+        /* Experience cards with color accents */
+        .exp-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .exp-card:nth-child(1) { border-left-color: var(--gradient-start); }
+        .exp-card:nth-child(2) { border-left-color: var(--accent-pink); }
+        .exp-card:nth-child(3) { border-left-color: var(--accent-teal); }
+        .exp-card:nth-child(4) { border-left-color: var(--accent-yellow); }
+
+        .exp-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .exp-company {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .exp-role {
+            font-size: 0.95rem;
+            color: var(--gradient-start);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-desc {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* Colorful skill tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:nth-child(4n+1) { color: var(--gradient-start); border: 2px solid var(--gradient-start); }
+        .skill-tag:nth-child(4n+2) { color: var(--accent-pink); border: 2px solid var(--accent-pink); }
+        .skill-tag:nth-child(4n+3) { color: var(--accent-teal); border: 2px solid var(--accent-teal); }
+        .skill-tag:nth-child(4n) { color: var(--gradient-end); border: 2px solid var(--gradient-end); }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Papers */
+        .paper-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .paper-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .paper-meta {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .paper-citations {
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+
+        /* Education */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .edu-card {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 16px;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .edu-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #666;
+        }
+
+        footer .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .stat {
+            text-align: center;
+        }
+
+        footer .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        footer .stat-label {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            .hero {
+                padding: 3rem 1.5rem 5rem;
+            }
+            .about {
+                margin: -2rem 1rem 0;
+                padding: 1.5rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="name">Nafiz Hamid</h1>
+            <p class="tagline">
+                Senior AI/ML Engineer building production systems that actually work. Harvard postdoc turned startup engineer turned enterprise ML.
+            </p>
+            <nav class="links">
+                <a href="mailto:nh@nafiz.bio" class="link-pill">Email</a>
+                <a href="https://github.com/nafizh" class="link-pill">GitHub</a>
+                <a href="https://linkedin.com/in/nafizhamid" class="link-pill">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ" class="link-pill">Scholar</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="about">
+            <p>
+                I build AI systems that actually work in production. Currently at Mayo Clinic, previously the first engineering hire at an AI drug discovery startup. I did a postdoc at Harvard, got a PhD at Iowa State, but these days I'm firmly in industry—focused on shipping reliable ML systems, not publishing papers.
+            </p>
+            <p>
+                What I care about: evaluation harnesses, guardrails, schema constraints—the boring infrastructure that makes AI trustworthy. If an LLM system is going to be used by thousands of people in healthcare, it better work correctly every time.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-header"><span class="emoji">💼</span> Experience</h2>
+
+            <div class="exp-card">
+                <div class="exp-top">
+                    <span class="exp-company">Mayo Clinic</span>
+                    <span class="exp-date">2024 - Present</span>
+                </div>
+                <p class="exp-role">Senior AI/ML Engineer · Rochester, MN</p>
+                <p class="exp-desc">
+                    Building an enterprise AI search platform on Vertex AI that thousands of employees use daily. The interesting challenge: making LLM outputs reliable enough for healthcare—schema constraints, validation harnesses, the kind of guardrails that let you sleep at night.
+                </p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-top">
+                    <span class="exp-company">Nobias Therapeutics</span>
+                    <span class="exp-date">2021 - 2024</span>
+                </div>
+                <p class="exp-role">AI/ML Engineer (First Hire) · Mountain View, CA</p>
+                <p class="exp-desc">
+                    Joined as the first engineering hire when it was just an idea about using AI to find drugs for kids with rare diseases. Built the ML infrastructure from scratch—RAG pipelines, fine-tuned models, agent systems. The startup stuff: wearing many hats, shipping fast.
+                </p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-top">
+                    <span class="exp-company">Harvard University</span>
+                    <span class="exp-date">2020 - 2021</span>
+                </div>
+                <p class="exp-role">Postdoctoral Scientist · Cambridge, MA</p>
+                <p class="exp-desc">
+                    Built PyTorch models on large genomic datasets. Served as a reviewer for NeurIPS, ICLR, and ISMB—which taught me what makes research actually useful versus just publishable.
+                </p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-top">
+                    <span class="exp-company">Samsung R&D</span>
+                    <span class="exp-date">2012 - 2014</span>
+                </div>
+                <p class="exp-role">Software Engineer · Dhaka, Bangladesh</p>
+                <p class="exp-desc">
+                    My first real engineering job. Built C++ benchmarking tools for Tizen OS and integrated them into CI. Learned the fundamentals of shipping software that other people depend on.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header"><span class="emoji">🛠️</span> What I Work With</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">Vertex AI</span>
+                <span class="skill-tag">Gemini</span>
+                <span class="skill-tag">GPT-4</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">ColBERT</span>
+                <span class="skill-tag">DSPy</span>
+                <span class="skill-tag">LangGraph</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">GCP</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">BigQuery</span>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header"><span class="emoji">📄</span> Select Papers</h2>
+            <p style="color: #666; margin-bottom: 1.25rem;">From my academic life. I don't actively publish anymore, but these still get cited.</p>
+
+            <div class="paper-card">
+                <p class="paper-title">The CAFA challenge reports improved protein function prediction</p>
+                <p class="paper-meta">Genome Biology, 2019 · <span class="paper-citations">519 citations</span></p>
+            </div>
+
+            <div class="paper-card">
+                <p class="paper-title">Identifying Antimicrobial Peptides using Word Embedding with Deep RNNs</p>
+                <p class="paper-meta">Bioinformatics, 2019 · <span class="paper-citations">141 citations</span></p>
+            </div>
+
+            <div class="paper-card">
+                <p class="paper-title">MetaMiner: A Scalable Peptidogenomics Approach</p>
+                <p class="paper-meta">Cell Systems, 2019 · <span class="paper-citations">86 citations</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header"><span class="emoji">🎓</span> Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>Iowa State University</h3>
+                    <p>PhD, Computational Biology · 2014 - 2019</p>
+                </div>
+                <div class="edu-card">
+                    <h3>Islamic University of Technology</h3>
+                    <p>BSc, Computer Science · 2009 - 2012</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">949</div>
+                    <div class="stat-label">Citations</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">h-index</div>
+                </div>
+            </div>
+            <p>Building AI systems that work in production.</p>
+        </footer>
+    </div>
+</body>
+</html>

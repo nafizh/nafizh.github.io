@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiz Hamid - Concept 1: Terminal Elegance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg-secondary: #161b22;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-orange: #d29922;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Subtle noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 4rem;
+        }
+
+        .name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 2.2rem;
+            background: var(--accent);
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text);
+            max-width: 580px;
+            margin-bottom: 2rem;
+        }
+
+        .tagline strong {
+            color: var(--accent);
+        }
+
+        /* Links row */
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .links a::before {
+            content: '>';
+            color: var(--border);
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+        }
+
+        .links a:hover::before {
+            color: var(--accent);
+        }
+
+        /* Section headers */
+        .section-header {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-header::before {
+            content: '$';
+            color: var(--text-muted);
+        }
+
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Experience items */
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .experience-item:hover {
+            border-left-color: var(--accent);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-company {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .exp-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .exp-role {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-bullets {
+            list-style: none;
+        }
+
+        .exp-bullets li {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .exp-bullets li::before {
+            content: '~';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Highlight numbers */
+        .highlight {
+            color: var(--accent-green);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-orange);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-category p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Publications */
+        .pub-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .pub-title {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .pub-venue {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .pub-citations {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            html {
+                font-size: 16px;
+            }
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            .name {
+                font-size: 2rem;
+            }
+            .exp-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name">Nafiz Hamid<span class="cursor"></span></h1>
+            <p class="title">Senior AI/ML Engineer @ Mayo Clinic</p>
+            <p class="tagline">
+                Harvard-trained engineer turning AI products from slideware to <strong>dependable, production-grade software</strong>.
+                Building LLM systems used by thousands.
+            </p>
+            <nav class="links">
+                <a href="mailto:nh@nafiz.bio">email</a>
+                <a href="https://github.com/nafizh">github</a>
+                <a href="https://linkedin.com/in/nafizhamid">linkedin</a>
+                <a href="https://scholar.google.com/citations?user=GSgXV78AAAAJ">scholar</a>
+            </nav>
+        </header>
+
+        <section>
+            <h2 class="section-header">experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-company">Mayo Clinic</span>
+                    <span class="exp-date">Oct 2024 - Present</span>
+                </div>
+                <p class="exp-role">Senior AI/ML Engineer, Rochester, MN</p>
+                <ul class="exp-bullets">
+                    <li>Architected enterprise AI search platform on <strong>Vertex AI (Gemini)</strong> with FastAPI; serves thousands of employees</li>
+                    <li>Built validation harness achieving <span class="highlight">99%</span> field-level accuracy for document intelligence</li>
+                    <li>Reduced manual query time by <span class="highlight">80%</span> with LLM-generated BigQuery SQL</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-company">Nobias Therapeutics</span>
+                    <span class="exp-date">Aug 2021 - Aug 2024</span>
+                </div>
+                <p class="exp-role">AI/ML Engineer (First Hire), Mountain View, CA</p>
+                <ul class="exp-bullets">
+                    <li>Led design of cloud-native ML/LLM pipelines on AWS; shipped agents, RAG systems, and fine-tuned models</li>
+                    <li>Improved entity stratification by <span class="highlight">+25%</span> macro-F1 with eval-first DSPy pipelines</li>
+                    <li>Built internal RAG stack with ColBERT retrieval + GPT-4/Llama/Mistral</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-company">Harvard University</span>
+                    <span class="exp-date">Jan 2020 - Aug 2021</span>
+                </div>
+                <p class="exp-role">Postdoctoral Scientist, Cambridge, MA</p>
+                <ul class="exp-bullets">
+                    <li>Engineered PyTorch models on large sequence datasets; interpreted learned representations</li>
+                    <li>Reviewer for NeurIPS, ICLR, and ISMB</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-company">Samsung R&D</span>
+                    <span class="exp-date">Dec 2012 - Jun 2014</span>
+                </div>
+                <p class="exp-role">Software Engineer, Dhaka, Bangladesh</p>
+                <ul class="exp-bullets">
+                    <li>Built C++ benchmarking tools for Tizen OS; integrated into CI for nightly regression detection</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header">skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>LLMs/ML</h4>
+                    <p>PyTorch, Vertex AI, Gemini, GPT-4, Llama, RAG, ColBERT, DSPy, LangGraph, LoRA</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <p>Python, R, SQL, TypeScript, C++</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & Infra</h4>
+                    <p>GCP, AWS, Docker, Kubernetes, BigQuery, PostgreSQL</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools</h4>
+                    <p>FastAPI, Git, GitHub Actions, CI/CD</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header">selected publications</h2>
+
+            <div class="pub-item">
+                <p class="pub-title">The CAFA challenge reports improved protein function prediction...</p>
+                <p class="pub-venue">Genome Biology, 2019</p>
+                <p class="pub-citations">519 citations</p>
+            </div>
+
+            <div class="pub-item">
+                <p class="pub-title">Identifying Antimicrobial Peptides using Word Embedding with Deep RNNs</p>
+                <p class="pub-venue">Bioinformatics, 2019</p>
+                <p class="pub-citations">141 citations</p>
+            </div>
+
+            <div class="pub-item">
+                <p class="pub-title">MetaMiner: A Scalable Peptidogenomics Approach...</p>
+                <p class="pub-venue">Cell Systems, 2019</p>
+                <p class="pub-citations">86 citations</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-header">education</h2>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-company">Iowa State University</span>
+                    <span class="exp-date">2014 - 2019</span>
+                </div>
+                <p class="exp-role">PhD, Computational Biology</p>
+            </div>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-company">Islamic University of Technology</span>
+                    <span class="exp-date">2009 - 2012</span>
+                </div>
+                <p class="exp-role">BSc, Computer Science</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>// 949 citations | h-index 7 | building things that work</p>
+        </footer>
+    </div>
+</body>
+</html>
